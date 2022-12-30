@@ -18,6 +18,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "react/function-component-definition": "off"
     }
 }
