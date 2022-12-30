@@ -5,6 +5,7 @@ module.exports = {
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:import/recommended",
         "airbnb"
     ],
     "overrides": [
@@ -17,5 +18,6 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "import/prefer-default-export": "off"
     }
 }
