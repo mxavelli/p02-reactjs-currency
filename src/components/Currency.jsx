@@ -1,17 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import Select from 'react-select'
 import axios from "axios";
-
+import { urls } from "./constants.js";
 import './Currency.css'
 
 export const Currency = () => {
-
-    const urls = [
-        {label: 'ARG', value: 'https://pydolarlibre.francis.center/api/v1/argcurrency/json'},
-        {label: 'COL', value: 'https://pydolarlibre.francis.center/api/v1/cop/json'},
-        {label: 'BRA', value: 'https://pydolarlibre.francis.center/api/v1/brl/json'},
-    ]
-
     const [currencies, setCurrencies] = useState([]);
     const getCurrency = (value = 'https://pydolarlibre.francis.center/api/v1/argcurrency/json') => {
        axios
