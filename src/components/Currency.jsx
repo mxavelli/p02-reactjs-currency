@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Select from 'react-select';
-import axios from 'axios';
 import { urls } from './constants';
 import './Currency.css';
+import { useFetchApi, STATUS } from '../hooks/useFetchApi';
 
 export const Currency = () => {
-  const [currencies, setCurrencies] = useState([]);
-  const getCurrency = (value = 'https://pydolarlibre.francis.center/api/v1/argcurrency/json') => {
-    axios
-      .get(value)
-      .then((response) => setCurrencies(response.data));
-  };
-
-  useEffect(() => {
-    getCurrency();
-  }, []);
+  const { fetchUrl, dataFetched, status } = useFetchApi(
+    {
+      url: 'https://pydolarlibre.francis.center/api/v1/argcurrency/json',
+      shouldLoadOnMount: true,
+    },
+  );
 
   const handleSelectChange = (value) => {
-    getCurrency(value.value);
+    fetchUrl(value.value);
   };
 
   return (
@@ -27,18 +23,21 @@ export const Currency = () => {
         options={urls}
         onChange={handleSelectChange}
       />
+      {status === STATUS.LOADING && <p>Loading</p>}
+      {dataFetched !== null && (
       <div className="Currencies">
         <p>
           BUY:
-          {currencies.Compra}
+          {dataFetched.Compra}
           $
         </p>
         <p>
           SELL:
-          {currencies.Venta}
+          {dataFetched.Venta}
           $
         </p>
       </div>
+      )}
     </div>
   );
 };
