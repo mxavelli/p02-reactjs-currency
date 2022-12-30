@@ -4,7 +4,7 @@ import axios from 'axios';
 import { urls } from './constants';
 import './Currency.css';
 
-export function Currency() {
+export const Currency = () => {
   const [currencies, setCurrencies] = useState([]);
   const getCurrency = (value = 'https://pydolarlibre.francis.center/api/v1/argcurrency/json') => {
     axios
@@ -41,4 +41,4 @@ export function Currency() {
       </div>
     </div>
   );
-}
+};
