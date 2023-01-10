@@ -1,13 +1,12 @@
 import React from 'react';
 import Select from 'react-select';
 import { urls } from './constants';
-import './Currency.css';
 import { useFetchApi, STATUS } from '../hooks/useFetchApi';
 
 export const Currency = () => {
   const { fetchUrl, dataFetched, status } = useFetchApi(
     {
-      url: 'https://pydolarlibre.francis.center/api/v1/argcurrency/json',
+      url: 'https://pydolarlibre.francis.center/api/v1/ARG/json',
       shouldLoadOnMount: true,
     },
   );
@@ -16,25 +15,33 @@ export const Currency = () => {
     fetchUrl(value.value);
   };
 
+  const formatearCantidad = (cantidad) => new Intl.NumberFormat(
+    'en-US',
+    { style: 'currency', currency: 'USD' },
+  ).format(cantidad);
+
   return (
-    <div className="Currency-container">
+    <div className="basis-full m-20 md:w-2/3 mx-auto">
       <Select
-        defaultValue={{ label: 'ARG', value: 'https://pydolarlibre.francis.center/api/v1/argcurrency/json' }}
+        defaultValue={{ label: 'Argentina', value: 'https://pydolarlibre.francis.center/api/v1/ARG/json' }}
         options={urls}
         onChange={handleSelectChange}
+        className="text-2xl font-medium text-green-700"
       />
-      {status === STATUS.LOADING && <p>Loading</p>}
+      {status === STATUS.LOADING && <p className="text-green-700 text-3xl font-black">Loading</p>}
       {dataFetched !== null && (
-      <div className="Currencies">
-        <p>
+      <div className="font-black text-3xl m-20 md:w-2/3 mx-auto">
+        <p className="text-center m-20 font-black text-green-800">
           BUY:
-          {dataFetched.Compra}
-          $
+          {' '}
+          {'  '}
+          {formatearCantidad(dataFetched.Compra)}
         </p>
-        <p>
+        <p className="text-center m-20 font-black text-green-800">
           SELL:
-          {dataFetched.Venta}
-          $
+          {' '}
+          {'  '}
+          {formatearCantidad(dataFetched.Venta)}
         </p>
       </div>
       )}

@@ -19,6 +19,8 @@ module.exports = {
     ],
     "rules": {
         "import/prefer-default-export": "off",
-        "react/function-component-definition": "off"
+        "import/extensions": "off",
+        "react/function-component-definition": "off",
+        "react/react-in-jsx-scope": "off",
     }
 }
