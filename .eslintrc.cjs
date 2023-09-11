@@ -22,5 +22,6 @@ module.exports = {
         "import/extensions": "off",
         "react/function-component-definition": "off",
         "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
     }
 }

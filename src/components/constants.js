@@ -6,3 +6,7 @@ export const urls = [
   { label: 'Republica Dominicana Banco Popular', value: 'https://pydolarlibre.francis.center/api/v1/DOP_POPU/json' },
   { label: 'Republica Dominicana Banco Banreservas', value: 'https://pydolarlibre.francis.center/api/v1/DOP_BANRE/json' },
 ];
+
+export const urlMap = {
+  ALL: { label: 'All', endpoint: 'https://pydolarlibre.francis.center/api/v1/ALL/json' },
+};
