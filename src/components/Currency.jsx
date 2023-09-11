@@ -2,23 +2,20 @@ import React from 'react';
 import Select from 'react-select';
 import { urls } from './constants';
 import { useFetchApi, STATUS } from '../hooks/useFetchApi';
+import { formatearCantidad } from './utils.js';
 
 export const Currency = () => {
   const { fetchUrl, dataFetched, status } = useFetchApi(
     {
       url: 'https://pydolarlibre.francis.center/api/v1/ARG/json',
       shouldLoadOnMount: true,
+      useLocalStorageFirst: true,
     },
   );
 
   const handleSelectChange = (value) => {
     fetchUrl(value.value);
   };
-
-  const formatearCantidad = (cantidad) => new Intl.NumberFormat(
-    'en-US',
-    { style: 'currency', currency: 'USD' },
-  ).format(cantidad);
 
   return (
     <div className="basis-full m-20 md:w-2/3 mx-auto">

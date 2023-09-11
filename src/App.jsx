@@ -1,3 +1,4 @@
+import { Calculator } from './components/calculator';
 import { Currency } from './components/Currency';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer';
@@ -9,7 +10,8 @@ function App() {
       <div className="mt-10 flex md:w-2/3 mx-auto">
         <Currency />
       </div>
-                <Footer />
+      <Calculator />
+      <Footer />
     </div>
   );
 }
