@@ -17,9 +17,9 @@ export const Calculator = () => {
 
   const [currencies, setCurrencies] = useState([]);
 
-  const onValueChange = (id) => (e) => {
+  const onValueChange = (id) => ({ value }) => {
     const valueCompraOfCurrency = currencies.find((i) => i.id === id).Compra;
-    const valueIntroduced = Number(e.target.value) ?? 1;
+    const valueIntroduced = Number(value) ?? 1;
     const usd = valueIntroduced / valueCompraOfCurrency;
     setCurrencies((old) => old.map((cur) => ({
       ...cur,
