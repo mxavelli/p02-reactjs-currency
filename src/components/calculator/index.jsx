@@ -17,7 +17,8 @@ export const Calculator = () => {
 
   const [currencies, setCurrencies] = useState([]);
 
-  const onValueChange = (id) => ({ value }) => {
+  const onValueChange = (id) => ({ floatValue: value }, { source }) => {
+    if (source === 'prop') return;
     const valueCompraOfCurrency = currencies.find((i) => i.id === id).Compra;
     const valueIntroduced = Number(value) ?? 1;
     const usd = valueIntroduced / valueCompraOfCurrency;
@@ -41,10 +42,13 @@ export const Calculator = () => {
     return <p>Loading...</p>;
   }
   return dataFetched && (
-  <div>
-    Last updated:
-    {dataFetched.savedOn}
-
+  <div id="calculator">
+    <strong>
+      Last updated:
+      {` ${new Date(dataFetched.savedOn).toLocaleString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric',
+      })}`}
+    </strong>
     {currencies.length > 0 && currencies.map(({ id, value }) => (
       <Input name={id} key={id} onChange={onValueChange(id)} value={value} />
     ))}

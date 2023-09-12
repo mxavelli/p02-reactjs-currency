@@ -5,12 +5,15 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="container mx-auto mt-20">
-      <Header />
-      <div className="mt-10 flex md:w-2/3 mx-auto">
-        <Currency />
+    <div>
+      <div className="container mx-auto mt-20 pl-5 pr-5">
+        <a href="#calculator">Go to Calculator</a>
+        <Header />
+        <div className="mt-10 flex md:w-2/3 mx-auto">
+          <Currency />
+        </div>
+        <Calculator />
       </div>
-      <Calculator />
       <Footer />
     </div>
   );
