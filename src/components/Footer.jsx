@@ -10,11 +10,15 @@ const Footer = () => (
     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
       by
       {' '}
-      <a href="https://github.com/mxavelli" target="_blank" className="cursor-pointer" rel="noreferrer">Xavelli</a>
-      {' '}
+        <a href="https://github.com/mxavelli" target="_blank" className="cursor-pointer hover:text-purple-300 hover:scale-105 transition-transform">
+            Xavelli
+        </a>
+        {' '}
       &
       {' '}
-      <a href="https://github.com/Freshenext" target="_blank" className="cursor-pointer" rel="noreferrer">Freshenext</a>
+      <a href="https://github.com/Freshenext" target="_blank" className="cursor-pointer hover:text-blue-300 hover:scale-105 transition-transform" rel="noreferrer">
+          Freshenext
+      </a>
     </span>
   </div>
 );
