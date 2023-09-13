@@ -50,7 +50,9 @@ export const Calculator = () => {
       })}`}
     </strong>
     {currencies.length > 0 && currencies.map(({ id, value }) => (
-      <Input name={id} key={id} onChange={onValueChange(id)} value={value} />
+        //TODO: Backend must add these descriptive values on their endpoint for each currency so, this won't be needed anymore longer
+      <Input name={id === 'DOP_POPU' ? 'Republica Dominicana Banco Popular' : id === 'DOP_BANRE' ? 'Republica Dominicana Banco Banreservas' : id}
+             key={id} onChange={onValueChange(id)} value={value} />
     ))}
   </div>
   );
