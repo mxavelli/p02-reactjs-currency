@@ -5,7 +5,7 @@ const Footer = () => (
       {'  '}
     </span>
     <div className="flex justify-center sm:ml-2 sm:mr-1 rounded-lg">
-      <img className="h-8 justify-center" src="https://www.svgrepo.com/show/13666/heart.svg" alt="XaveFresh Logo" style={{ backgroundColor: 'red' }} />
+      <img className="h-8 justify-center" src="https://www.svgrepo.com/show/299502/heart.svg" alt="XaveFresh Logo" />
     </div>
     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
       by

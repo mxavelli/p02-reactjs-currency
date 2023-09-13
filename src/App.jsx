@@ -7,7 +7,9 @@ function App() {
   return (
     <div>
       <div className="container mx-auto mt-20 pl-5 pr-5">
-        <a href="#calculator">Go to Calculator</a>
+        <a href="#calculator" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+            Go to Calculator
+        </a >
         <Header />
         <div className="mt-10 flex md:w-2/3 mx-auto">
           <Currency />
