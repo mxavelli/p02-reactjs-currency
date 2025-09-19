@@ -6,6 +6,7 @@ export const Input = ({ name, onChange, value }) => (
     <NumericFormat
       className="p-2 rounded-lg"
       type="number"
+      pattern="\d*"
       value={value}
       onValueChange={(values, sourceInfo) => {
         onChange(values, sourceInfo);
