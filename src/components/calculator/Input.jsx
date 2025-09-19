@@ -5,6 +5,7 @@ export const Input = ({ name, onChange, value }) => (
     <label htmlFor={name} className="font-bold ml-1 mb-0.5">{name}</label>
     <NumericFormat
       className="p-2 rounded-lg"
+      type="number"
       value={value}
       onValueChange={(values, sourceInfo) => {
         onChange(values, sourceInfo);
