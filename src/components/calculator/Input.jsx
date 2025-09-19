@@ -11,9 +11,9 @@ export const Input = ({ name, onChange, value }) => (
       onValueChange={(values, sourceInfo) => {
         onChange(values, sourceInfo);
       }}
-      thousandSeparator=","
+      //thousandSeparator=","
       allowNegative={false}
-      decimalScale={2}
+      //decimalScale={2}
       onFocus={() => {
         onChange({ formattedValue: '', value: '', floatValue: null }, { source: 'event' });
       }}
