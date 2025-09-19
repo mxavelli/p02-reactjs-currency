@@ -16,7 +16,7 @@ export const Input = ({ name, onChange, value }) => {
         valueIsNumericString
         thousandSeparator="."
         decimalSeparator=","
-        decimalScale={4}
+        decimalScale={2}
         allowNegative={false}
         inputMode="decimal"
         onValueChange={(values, sourceInfo) => {
