@@ -6,12 +6,16 @@ export const Input = ({ name, onChange, value }) => (
     <NumericFormat
       className="p-2 rounded-lg"
       value={value}
-      onValueChange={onChange}
+      onValueChange={(values, sourceInfo) => {
+        onChange(values, sourceInfo);
+      }}
       thousandSeparator=","
       allowNegative={false}
       decimalScale={2}
       prefix="$"
-      onFocus={() => onChange({ floatValue: null, value: '' })}
+      onFocus={() => {
+        onChange({ formattedValue: '', value: '', floatValue: null }, { source: 'event' });
+      }}
     />
   </div>
 );
